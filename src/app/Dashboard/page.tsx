@@ -11,16 +11,14 @@ const Dashboard: React.FC = () => {
             router.push('/Login')
         }
     },[router])
-    const isAuthenticated = localStorage.getItem('isAuthenticated');
+  
     return (
-        <>
-        {isAuthenticated?(
+      
       <div>
         <h1>Dashboard</h1>
         <p>Welcome to your dashboard!</p>
-      </div>):(<h1>Unauthorized access</h1>)
-        }
-        </>
+      </div>
+       
     );
   };
   
