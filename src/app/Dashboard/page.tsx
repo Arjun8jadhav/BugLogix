@@ -6,6 +6,7 @@ const Dashboard = () => {
     const router =useRouter();
     
     useEffect(()=>{
+      
         const isAuthenticated=localStorage.isAuthenticated;
         if(!isAuthenticated){
             router.push('/Login')
