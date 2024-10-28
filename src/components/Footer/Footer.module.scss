@@ -1,4 +1,10 @@
 .footer{
     background-color: #5890eb;
     height: 8dvh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    p{
+        padding-right: 3px;
+    }
 }
