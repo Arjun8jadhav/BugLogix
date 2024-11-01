@@ -2,6 +2,7 @@
     position: relative;
     padding: 20px;
     height: 82dvh;
+    overflow-y: scroll;
     .top_bar{
       display: flex;
       flex-direction: row;
@@ -103,17 +104,102 @@
   }
   
   .taskList {
-    margin-top: 40px;
     display: flex;
     flex-direction: column;
+    width: 100%; // Occupies the full width of the parent container
     gap: 10px;
+  
+    .taskRow {
+      width: 100%; 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box; 
+      border: 1px solid rgb(224, 221, 221);
+      border-radius: 5px;
+  
+      .title {
+        flex: 3;
+      }
+  
+      .assignee {
+        flex: 1;
+      }
+  
+      .status {
+        flex: 1;
+      }
+  
+      .priority {
+        flex: 1;
+      }
+  
+      .icon {
+        flex: 0.2; // Adjust space as per your design
+        cursor: pointer;
+        margin-left: 10px;
+        color: #555;
+        transition: color 0.2s;
+  
+        &:hover {
+          color: #0070f3; // Highlight color on hover
+        }
+      }
+    }
   }
   
-  .taskRow {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+  .confirmPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    width: 300px;
+    text-align: center;
+  
+    p {
+      margin-bottom: 20px;
+      color: #333;
+    }
+  
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:first-of-type {
+        background-color: #ff4d4f; // Delete button color
+        color: #fff;
+      }
+  
+      &:last-of-type {
+        background-color: #f0f0f0; // Cancel button color
+        color: #333;
+      }
+  
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  
+  
+  @media screen and (max-width: 699px){
+
+      .assignee{
+        display: none;
+      }
+      .status{
+        display: none;
+      }
   }
   
 
