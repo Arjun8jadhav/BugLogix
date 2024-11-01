@@ -2,19 +2,39 @@
     position: relative;
     padding: 20px;
     height: 82dvh;
+    .top_bar{
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: flex-end;
+
+      button{
+        align-items: center;
+        height: 30px;
+        padding: 0 10px;
+        background-color: #4CAF50;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        color: white;
+        
+      }
+      select{
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        padding: 0 10px;
+        border-radius: 5px;
+        background-color: #ddd;
+      }
+    }
+     .empty{
+         height: 150px;
+         width: 150px;
+         object-fit: cover;
+     }
   }
+
   
-  .createButton {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    float: right;
-    
-    
-  }
   
   .overlay {
     position: fixed;
@@ -77,6 +97,25 @@
     display: flex;
     justify-content: space-between;
   }
+  .createButton {
+    float: right;
+    margin-bottom: 20px;
+  }
+  
+  .taskList {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .taskRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
 
 
   
