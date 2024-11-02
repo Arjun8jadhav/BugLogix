@@ -13,7 +13,7 @@ interface Task {
   status: string;
   assignee: string;
   dueDate: string;
-  _id: string; // Update ID to _id
+  _id: string; 
 }
 
 const Dashboard: React.FC = () => {
@@ -105,14 +105,14 @@ const Dashboard: React.FC = () => {
   };
 
   const handleViewTask = (taskId: string) => {
-    router.push(`/Dashboard/${taskId}`);
+    router.push(`/Dashboard/view?ID=${taskId}`);
   };
 
   return (
     <Layout>
       <section className={styles.dashboard}>
-        {isLoading ? (
-          <div className={styles.loader}>Loading...</div>
+        {isLoading ? (<div className={styles.loader}>Loading...</div>
+
         ) : (
           <>
             <div className={styles.top_bar}>
@@ -140,7 +140,7 @@ const Dashboard: React.FC = () => {
                 <option value="Closed">Closed</option>
               </select>
               <button onClick={() => setShowForm(true)} className={styles.createButton}>
-                Create Task
+                Create
               </button>
             </div>
 
@@ -201,24 +201,28 @@ const Dashboard: React.FC = () => {
 
             {tasks.length > 0 ? (
               <div className={styles.taskList}>
-              {tasks.map((task) => (
+                {tasks.map((task) => (
                   <div key={task._id} className={styles.taskRow}>
-              
+
                     <span className={styles.title}>{task.title}</span>
                     <span className={styles.priority}>{task.priority}</span>
                     <span className={styles.status}>{task.status}</span>
                     <span className={styles.assignee}>{task.assignee}</span>
-                    <span className={styles.icon} onClick={() => handleViewTask(task._id)}>📂</span>
-                    <span className={styles.icon} onClick={() => {
+                    <Image src={asset.View} alt="View" className={styles.icon} onClick={() => handleViewTask(task._id)}/>
+                    <Image src={asset.Delete_icon} alt="Delete" className={styles.icon} onClick={() => {
                       setShowConfirmDelete(true);
                       setTaskToDelete(task._id);
-                    }}>🗑️</span>
+                    }}/>
                   </div>
                 ))}
 
               </div>
             ) : (
-              <Image className={styles.empty} src={asset.Emp} alt="No tasks available" />
+              <div className={styles.noresult}>
+                <Image onClick={() => setShowForm(true)} className={styles.empty} src={asset.Emp} alt="No tasks available" />
+                <p>No result found</p>
+              </div>
+
             )}
 
             {showConfirmDelete && (

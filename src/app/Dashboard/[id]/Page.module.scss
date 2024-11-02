@@ -1,0 +1,82 @@
+.boardView {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    height: 82dvh;
+    overflow-y: scroll;
+  }
+  
+  .taskCard {
+    background-color: #f4f5f7;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .taskTitle {
+    font-size: 1.5em;
+    color: #172b4d;
+    margin-bottom: 10px;
+  }
+  
+  .taskDetail {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 1em;
+    color: #42526e;
+  
+    p {
+      margin: 0;
+      padding: 8px;
+      background: #ffffff;
+      border-radius: 4px;
+    }
+  
+    strong {
+      color: #0052cc;
+    }
+  }
+  
+  .inputField, .textAreaField, .selectField {
+    width: 100%;
+    padding: 8px;
+    font-size: 1em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .textAreaField {
+    resize: vertical;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .saveButton, .cancelButton, .editButton {
+    padding: 8px 16px;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .saveButton {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .cancelButton {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .editButton {
+    background-color: #007bff;
+    color: white;
+  }
+  
